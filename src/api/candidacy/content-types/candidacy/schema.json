@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "candidacies",
+  "info": {
+    "singularName": "candidacy",
+    "pluralName": "candidacies",
+    "displayName": "Candidacy"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "job": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::job.job",
+      "inversedBy": "candidacies"
+    },
+    "candidate": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "candidacies"
+    }
+  }
+}
