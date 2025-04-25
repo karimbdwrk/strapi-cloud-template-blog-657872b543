@@ -4,7 +4,8 @@
   "info": {
     "singularName": "job",
     "pluralName": "jobs",
-    "displayName": "Job"
+    "displayName": "Job",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -24,6 +25,13 @@
       "relation": "oneToMany",
       "target": "api::candidacy.candidacy",
       "mappedBy": "job"
+    },
+    "UUID": {
+      "type": "customField",
+      "options": {
+        "uuid-format": "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
+      },
+      "customField": "plugin::strapi-advanced-uuid.uuid"
     }
   }
 }

@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCandidacyCandidacy extends Struct.CollectionTypeSchema {
   collectionName: 'candidacies';
   info: {
+    description: '';
     displayName: 'Candidacy';
     pluralName: 'candidacies';
     singularName: 'candidacy';
@@ -399,12 +400,25 @@ export interface ApiCandidacyCandidacy extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    UUID: Schema.Attribute.UID<
+      undefined,
+      {
+        'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+      }
+    > &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-advanced-uuid.uuid',
+        {
+          'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+        }
+      >;
   };
 }
 
 export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
   collectionName: 'companies';
   info: {
+    description: '';
     displayName: 'Company';
     pluralName: 'companies';
     singularName: 'company';
@@ -432,6 +446,18 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    UUID: Schema.Attribute.UID<
+      undefined,
+      {
+        'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+      }
+    > &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-advanced-uuid.uuid',
+        {
+          'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+        }
+      >;
   };
 }
 
@@ -470,6 +496,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiJobJob extends Struct.CollectionTypeSchema {
   collectionName: 'jobs';
   info: {
+    description: '';
     displayName: 'Job';
     pluralName: 'jobs';
     singularName: 'job';
@@ -494,6 +521,18 @@ export interface ApiJobJob extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    UUID: Schema.Attribute.UID<
+      undefined,
+      {
+        'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+      }
+    > &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-advanced-uuid.uuid',
+        {
+          'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+        }
+      >;
   };
 }
 
@@ -997,6 +1036,18 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
+    UUID: Schema.Attribute.UID<
+      undefined,
+      {
+        'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+      }
+    > &
+      Schema.Attribute.CustomField<
+        'plugin::strapi-advanced-uuid.uuid',
+        {
+          'uuid-format': '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}';
+        }
+      >;
   };
 }
 
